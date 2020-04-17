@@ -40,17 +40,17 @@ https://blog.csdn.net/weixin_40396510/article/details/79277731
     │   │       └── domain--对应持久层的pojo
     │   │
     │   ├── resources
-    │   │   ├── blackList
-    │   │ 	│       └── blackListRefresh.service.xml--定时任务配置文件
-    │   │   ├── dbscripts
-    │   │ 	│       └── create_db.sql--数据库脚本
-    │   │   ├── mybatis
-    │   │ 	│       └── mapping--mybatis的Mapper.xml配置文件
-    │   │ 	│
-    │   │   ├── webapp--前端jsp文件
-    │   │   ├── application.properties--springboot系统配置文件
-    │   │   ├── log4j.xml
-    │   │   └── transaction.xml--事务的配置文件
+    │   │       ├── blackList
+    │   │       │      └── blackListRefresh.service.xml--定时任务配置文件
+    │   │       ├── dbscripts
+    │   │       │      └── create_db.sql--数据库脚本 
+    │   │       ├── mybatis
+    │   │       │      └── mapping--mybatis的Mapper.xml配置文件
+    │   │       │
+    │   │       ├── webapp--前端jsp文件
+    │   │       ├── application.properties--springboot系统配置文件
+    │   │       ├── log4j.xml
+    │   │       └── transaction.xml--事务的配置文件
     │   │
     │   │
     └── test
