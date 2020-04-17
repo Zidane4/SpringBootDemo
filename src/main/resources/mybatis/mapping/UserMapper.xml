@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--命名空间是对应接口的包名+类名,指定要映射的接口 -->
+<mapper namespace="com.zidane.spring.dao.mapper.UserMapper">
+    <resultMap id="UserResult" type="com.zidane.spring.domain.User">
+        <result column="user_id" property="userId" jdbcType="VARCHAR" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="user_type" property="userType" jdbcType="INTEGER" />
+        <result column="locked" property="locked" jdbcType="INTEGER" />
+        <result column="credit" property="credit" jdbcType="INTEGER" />
+        <result column="last_visit" property="lastVisit" jdbcType="VARCHAR" />
+        <result column="last_ip" property="lastIp" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <!--id是接口中的方法名，结果类型如没有在mybatis.xml文件中配置别名，则必须使用全名称（包名+类名） -->
+    <insert id="insert" parameterType="com.zidane.spring.domain.User">
+        insert into t_user (user_id, user_name, password, user_type, locked, credit, last_visit
+        , last_ip) values
+        <![CDATA[
+                (#{userId}, #{userName}, #{password}, ${userType}, ${locked}, ${credit},
+                #{lastVisit}, #{lastIp})
+        ]]>
+    </insert>
+
+    <update id="update" parameterType="com.zidane.spring.domain.User">
+        update t_user set
+        <if test="userName != null">
+            user_name = #{userName},
+        </if>
+        <if test="password != null">
+            password = #{password},
+        </if>
+        <if test="userType != null">
+            user_type = #{userType},
+        </if>
+        <if test="locked != null">
+            locked = #{locked},
+        </if>
+        <if test="credit != null">
+            credit = #{credit},
+        </if>
+        <if test="lastVisit != null">
+            last_visit = #{lastVisit},
+        </if>
+            last_ip = #{lastIp}
+        where
+        user_id = #{userId}
+    </update>
+
+    <select id="getUserByName" parameterType="java.lang.String" resultMap="UserResult">
+        select * from t_user where user_name=#{userName}
+    </select>
+
+    <select id="queryAllUser" resultMap="UserResult">
+        select * from t_user where user_type=0;
+    </select>
+
+    <select id="queryAllLockedUser" resultMap="UserResult">
+        select * from t_user where locked=1;
+    </select>
+</mapper>
