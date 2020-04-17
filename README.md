@@ -1,0 +1,2 @@
+# SpringBootDemo
+本系统的业务场景为一个简单的用户注册和管理系统，整体框架为springboot，前端的实现依赖springmvc框架。 使用redis实现了缓存黑名单功能，应用quartz开源框架实现定时任务的调度，持久层依赖mybatis，数据库为mysql。
