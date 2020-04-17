@@ -37,7 +37,11 @@ https://blog.csdn.net/weixin_40396510/article/details/79277731
     │   │       │
     │   │       ├── dao--对应三层结构的持久层
     │   │       │
-    │   │       └── domain--对应持久层的pojo
+    │   │       ├── domain--对应持久层的pojo
+    │   │       │
+    │   │       ├── util--redis配置和系统常量
+    │   │       │
+    │   │       └── task--黑名单信息定时刷新任务
     │   │
     │   ├── resources
     │   │       ├── blackList
