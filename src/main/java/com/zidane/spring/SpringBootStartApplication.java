@@ -15,7 +15,8 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @MapperScan("com.zidane.spring.dao.mapper")
 @ImportResource({"classpath:transaction.xml",
-        "classpath:blackList/blackListRefresh.service.xml"
+        "classpath:blackList/blackListRefresh.service.xml",
+        "classpath:blackList/zidane.zk-config.xml"
 })
 public class SpringBootStartApplication  extends SpringBootServletInitializer {
     public static void main(String args[]) {

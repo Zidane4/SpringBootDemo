@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="zkclient"
+          class="com.zidane.spring.util.zk.ZkLockUtil" init-method="initZkClient">
+        <property name="zkServerAddress" value="${zk.zkServerAddress}"/>
+        <property name="sessionTimeout" value="${zk.sessionTimeout}"/>
+        <property name="connectionTimeout" value="${zk.connectionTimeout}"/>
+        <property name="hostIp" value="${zk.hostIp}"/>
+        <property name="mutexPath" value="${zk.mutexPath}"/>
+        <property name="lockPath" value="${zk.lockPath}"/>
+    </bean>
+
+</beans>
