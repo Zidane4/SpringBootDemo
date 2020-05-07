@@ -20,7 +20,7 @@
 * 使用前首先要在本地安装数据库，本系统使用的是mysql，具体的安装可参考链接：
 https://blog.csdn.net/weixin_40396510/article/details/79277731
 * redis下载路径：https://github.com/microsoftarchive/redis/releases  当前系统使用版本：Redis-x64-3.2.100
-* zookeepre下载路径：https://zookeeper.apache.org/releases.html      当前系统使用版本：zookeeper-3.4.13
+* zookeeper下载路径：https://zookeeper.apache.org/releases.html      当前系统使用版本：zookeeper-3.4.13
 * 安装完成后，在配置文件application.properties中设置对应的数据库、redis、zk配置项信息，并执行sql文件create_db，创建数据库表、
 预置超级管理用户的数据。
 
